@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayLab", "ArrayLab\ArrayLab.csproj", "{9522CCE1-2D31-4E3D-98E6-E20EA5A00C65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9522CCE1-2D31-4E3D-98E6-E20EA5A00C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9522CCE1-2D31-4E3D-98E6-E20EA5A00C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9522CCE1-2D31-4E3D-98E6-E20EA5A00C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9522CCE1-2D31-4E3D-98E6-E20EA5A00C65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DBA0749-E96C-4B5C-B182-779970107DC8}
+	EndGlobalSection
+EndGlobal
