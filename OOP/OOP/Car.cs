@@ -4,17 +4,17 @@ using System.Text;
 
 namespace OOP
 {
-    class Car : Vehicle
+    class Car<T, X> : Vehicle
     {
-        private int passengersNumber;
-        private int doorsNumber;
+        private T passengersNumber;
+        private X doorsNumber;
 
-        public int PassengersNumber 
+        public T PassengersNumber 
         {
             get { return passengersNumber; }
             set { passengersNumber = value; }
         }
-        public int DoorsNumber
+        public X DoorsNumber
         {
             get { return doorsNumber; }
             set { doorsNumber = value; }
@@ -26,7 +26,7 @@ namespace OOP
             Stop();
         }
 
-        public Car(string model, int horsePower, int maxSpeed, int passengersNumber, int doorsNumber) 
+        public Car(string model, int horsePower, int maxSpeed, T passengersNumber, X doorsNumber) 
         {
             WheelsNumber = 4;
             Stop();

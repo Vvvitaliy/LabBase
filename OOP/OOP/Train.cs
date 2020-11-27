@@ -29,9 +29,28 @@ namespace OOP
 
         public override void ShowAllInfo()
         {
-            string output = String.Format("Поезд {0}\nКоличество колес: {1}\nСтатус: {2}\nКоличество лошадиных сил: {3}\nМаксимальная скорость: {4}\nКоличество вагонов: {5}\n",
+            string output = String.Format("Поезд {0}\nКоличество колес: {1}\nСтатус: {2}\nКоличество лошадиных сил: {3}\nМаксимальная скорость: {4}\nКоличество вагонов: {5}",
                 Model, WheelsNumber, Status, HorsePower, MaxSpeed, WagonNumber);
             Console.WriteLine(output);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Train train = (Train)obj;
+
+            return Status == train.Status && Model == train.Model && HorsePower == train.HorsePower &&
+                MaxSpeed == train.MaxSpeed && WagonNumber == train.WagonNumber && WheelsNumber == train.WheelsNumber;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Поезд {0}\nКоличество колес: {1}\nСтатус: {2}\nКоличество лошадиных сил: {3}\nМаксимальная скорость: {4}\nКоличество вагонов: {5}",
+                Model, WheelsNumber, Status, HorsePower, MaxSpeed, WagonNumber);
         }
     }
 }
