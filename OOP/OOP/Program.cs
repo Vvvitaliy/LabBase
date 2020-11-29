@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOP
 {
@@ -6,28 +7,63 @@ namespace OOP
     {
         static void Main(string[] args)
         {
-            Car<int, int> car1 = new Car<int, int>("BMW X5", 218, 220, 2, 5);
-            Car<double, string> car2 = new Car<double, string>("BMW X5", 218, 220, 2.5, "пять");
+            List<Train> trainList = new List<Train>();
+            trainList.Add(new Train("001Г Казань — Москва", 1200, 100, 7));
+            trainList.Add(new Train("003Г Казань — Москва", 1200, 100, 5));
+            trainList.Add(new Train("001Д Казань — Коломна", 1200, 100, 6));
+            trainList.Add(new Train("001А Рязань — Москва", 1200, 100, 3));
+            trainList.Add(new Train("005Г Москва — Рязань", 1200, 100, 9));
+            trainList.Add(new Train("002Г Москва — Коломна", 1200, 100, 4));
 
-            car1.ShowAllInfo();
-            Console.WriteLine("");
-            car2.ShowAllInfo();
-            Console.WriteLine("");
-
-            Train train = new Train("001Г Казань — Москва", 1200, 100, 7);
-            Console.WriteLine(train.ToString());
-            Console.WriteLine("");
-
-
-            Train train2 = new Train("001Г Казань — Москва", 1200, 100, 7);
-            Console.WriteLine(train.Equals(train2));
+            foreach (var item in trainList)
+            {
+                Console.WriteLine(item.WagonNumber);
+            }
             Console.WriteLine("");
 
-            train2.MaxSpeed = 150;
-            Console.WriteLine(train.Equals(train2));
-            Console.WriteLine("");
+            trainList.Sort();
+            foreach (var item in trainList)
+            {
+                Console.WriteLine(item.WagonNumber);
+            }
 
-            Console.WriteLine(train.Equals(car1));
+            Car<int, int> car = new Car<int, int>();
+
+            try
+            {
+                trainList[0].CompareTo(car);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Train train = new Train("001Г Казань — Москва", 1200, 100, -1);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Train train = new Train("001Г Казань — Москва", 1200, 0, 1);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Train train = new Train("001Г Казань — Москва", 0, 1, 1);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
