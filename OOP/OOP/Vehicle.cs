@@ -25,12 +25,26 @@ namespace OOP
         public int HorsePower
         {
             get { return horsePower; }
-            set { horsePower = value; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Количество лошадиных сил должно быть больше 0");
+                }
+                horsePower = value; 
+            }
         }
         public int MaxSpeed
         {
             get { return maxSpeed; }
-            set { maxSpeed = value; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Максимальная скорость должна быть больше 0");
+                }
+                maxSpeed = value; 
+            }
         }
         public string Status
         {
